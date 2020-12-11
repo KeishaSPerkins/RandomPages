@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+
+
+
+  <title>Background for my TV</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700,900">
+  
+  
+  
+<style>
+* {
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 4px;
+  outline: none;
+  text-align: center;
+  border: none;
+  padding: 5px 2px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1vw;
+  font-family: "Montserrat";
+  text-decoration: none;
+}
+
+#menu.hidden {
+  left: -200%;
+}
+
+body {
+  background-color: #000000;
+  font-size: 12px;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-flow: column;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  padding: 0px;
+  margin: 0px;
+}
+.section#red-section {
+  background: #cc3300;
+}
+.section#blue-section {
+  background: blue;
+}
+.section#purple-section {
+  background: #cc00cc;
+}
+.section#orange-section {
+  background: #ff6600;
+}
+.section#yellow-section {
+  background: gold;
+}
+.section#green-section {
+  background: lime;
+}
+.section#pink-section {
+  background: #cc0066;
+}
+.section#cyan-section {
+  background: cyan;
+}
+.section#black-section {
+  background: black;
+}
+.section#radio-section {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  opacity: 0.001;
+  z-index: 4;
+}
+.section#radio-section iframe#music {
+  height: 100%;
+  width: 100%;
+  font-size: 0.005rem;
+  color: black;
+  background: black;
+}
+.section#radio-section iframe#music::focus {
+  border: 30px solid gold;
+  height: 90vh;
+  width: 90vw;
+}
+
+.menu-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 10ch;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 5;
+}
+
+.menu {
+  display: grid;
+  position: fixed;
+  padding: 5px;
+  z-index: 5;
+  top: 20px;
+  left: calc(10ch + 35px);
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.menu-title {
+  margin: 0;
+  padding: 0 0 2px 0;
+  border-bottom: 1px solid white;
+  color: white;
+  font-size: 1.1vw;
+  font-weight: 900;
+}
+
+.colors, .songs {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(12, 1fr);
+  grid-gap: 10px;
+}
+
+.option {
+  font-size: 0.9rem;
+}
+
+#clock {
+  top: 45vh;
+  bottom: 40vh;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  z-index: 3;
+  font-size: 20vw;
+  font-size: clamp(30vw, 500px, 40vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+}
+
+#controls {
+  top: 20vh;
+  bottom: 60vh;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  opacity: 0.8;
+  z-index: 2;
+  font-size: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+
+  
+  
+  
+  
+
+</head>
+
+<body translate="no" >
+  <html>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="section" id="flow-section"></div>
+  <div class="section" id="gradient-section"></div>
+  <div class="section" id="blue-section"></div>
+  <div class="section" id="purple-section"></div>
+  <div class="section" id="orange-section"></div>
+  <div class="section" id="yellow-section"></div>
+  <div class="section" id="green-section"></div>
+  <div class="section" id="red-section"></div>
+  <div class="section" id="pink-section"></div>
+  <div class="section" id="cyan-section"></div>
+  <div class="section" id="black-section"></div>
+  <div class="section" id="radio-section"><span class="music">
+    <iframe id="music" class="music" src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1 " frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      
+    </div>
+  <div class="menu-button" id="menu-button">Menu</div>
+  <div id="menu" class="menu hidden">
+    <section class="songs">
+      <h2 class="menu-title">Music</h2>
+      <p class="option" id="nomusic">No music</p>
+      <p class="option" id="chillhop">Chillhop</p>
+      <p class="option" id="ambience">Ambience</p>
+      <p class="option" id="jazzpiano">Jazz Piano</p>
+      <p class="option" id="thunderstorm">Thunderstorm</p>
+    </section>
+    <section class="colors">
+      <h2 class="menu-title">Colors</h2>
+      <a href="#gradient-section" class="option" id="gradient">Gradient</a>
+      <a href="#flow-section" class="option" id="flow">Flow</a>
+      <a href="#blue-section" class="option" id="blue">Blue</a>
+      <a href="#purple-section" class="option" id="purple">Purple</a>
+      <a href="#green-section" class="option" id="green">Green</a>
+      <a href="#pink-section" class="option" id="pink">Pink</a>
+      <a href="#cyan-section" class="option" id="cyan">Cyan</a>
+      <a href="#red-section" class="option" id="red">Red</a>
+      <a href="#orange-section" class="option" id="orange">Orange</a>
+      <a href="#yellow-section" class="option" id="yellow">Yellow</a>
+      <a href="#black-section" class="option" id="black">Black</a>
+    </section>
+    
+  </div>
+  <div id="clock"></div>
+  <div id="controls"></div>
+</body>
+
+</html>
+  
+  
+      <script id="rendered-js" >
+var colors = new Array(
+  [62, 35, 255],
+  [60, 255, 60],
+  [255, 35, 98],
+  [45, 175, 230],
+  [255, 0, 255],
+  [255, 128, 0]
+);
+
+var step = 0;
+//color table indices for:
+// current color left
+// next color left
+// current color right
+// next color right
+var colorIndices = [0, 1, 2, 3];
+
+//transition speed
+var gradientSpeed = 0.002;
+function updateGradient() {
+  if ($ === undefined) return;
+
+  var c0_0 = colors[colorIndices[0]];
+  var c0_1 = colors[colorIndices[1]];
+  var c1_0 = colors[colorIndices[2]];
+  var c1_1 = colors[colorIndices[3]];
+
+  var istep = 1 - step;
+  var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+  var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+  var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+  var color1 = "rgb(" + r1 + "," + g1 + "," + b1 + ")";
+
+  var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+  var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+  var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+  var color2 = "rgb(" + r2 + "," + g2 + "," + b2 + ")";
+
+  $("#gradient-section")
+    .css({
+      background:
+        "-webkit-gradient(linear, left top, right top, from(" +
+        color1 +
+        "), to(" +
+        color2 +
+        "))"
+    })
+    .css({
+      background:
+        "-moz-linear-gradient(left, " + color1 + " 0%, " + color2 + " 100%)"
+    });
+  $("#flow-section")
+    .css({
+      background:
+        "-webkit-gradient(linear, left top, right top, from(" +
+        color1 +
+        "), to(" +
+        color1 +
+        "))"
+    })
+    .css({
+      background:
+        "-moz-linear-gradient(left, " + color1 + " 0%, " + color1 + " 100%)"
+    });
+  step += gradientSpeed;
+  if (step >= 1) {
+    step %= 1;
+    colorIndices[0] = colorIndices[1];
+    colorIndices[2] = colorIndices[3];
+
+    //pick two new target color indices
+    //do not pick the same as the current one
+    colorIndices[1] =
+      (colorIndices[1] + Math.floor(1 + Math.random() * (colors.length - 1))) %
+      colors.length;
+    colorIndices[3] =
+      (colorIndices[3] + Math.floor(1 + Math.random() * (colors.length - 1))) %
+      colors.length;
+  }
+}
+setInterval(updateGradient, 30);
+
+//Add Radio Stations
+let chillhop = document.getElementById("chillhop");
+let nomusic = document.getElementById("nomusic");
+let musicdiv = document.getElementById("radio-section");
+let ambience = document.getElementById("ambience");
+let jazzpiano = document.getElementById("jazzpiano");
+let thunderstorm = document.getElementById("thunderstorm");
+let controls = document.getElementById("controls");
+
+//Radio Station Click Events
+function selectMusic(URL){
+  musicdiv.innerHTML = '<iframe id="music" class="music" src="https://www.youtube.com/embed/' + URL +'?autoplay=1 " frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+  let music = document.getElementById("music");
+  let playing = false;
+}
+nomusic.addEventListener("click", function(){
+  selectMusic('nomusic');
+});
+chillhop.addEventListener("click", function(){
+  selectMusic('5qap5aO4i9A');
+});
+ambience.addEventListener('click', function(){
+  selectMusic('tNkZsRW7h2c');
+});
+jazzpiano.addEventListener('click', function(){
+  selectMusic('Dx5qFachd3A');
+});
+thunderstorm.addEventListener('click', function(){
+  selectMusic('VqxYQsVpZdg');
+});
+
+//Clock
+setInterval(function() {
+        //Display TIme
+        Number.prototype.pad = function(size) {
+          let s = String(this);
+          while (s.length < (size || 2)) {
+            s = "0" + s;
+          }
+          return s;
+        };
+        time = new Date();
+        hours = time.getHours();
+        minutes = time.getMinutes().pad(2);
+        if (hours > 12) {
+          hours = (hours - 12).pad(2);
+        }
+        ((hours === 00) || (hours === 0) ) ? hours = 12 : hours = hours
+        document.getElementById("clock").innerHTML = hours + ":" + minutes;
+        
+
+      }, 1000);
+
+//Toggle Menu
+let menuButton = document.getElementById("menu-button");
+let menu = document.getElementById('menu');
+menuButton.addEventListener("click", function(){
+  console.log("Yo!");
+  toggleMenu();
+	
+});
+function toggleMenu(){
+  if(menu.classList.contains('hidden')){
+		menu.classList.remove('hidden');
+	} else{
+		menu.classList.add('hidden');
+	}
+}
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
