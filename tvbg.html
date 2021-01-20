@@ -82,16 +82,18 @@ body {
   width: 20vh;
   position: fixed;
   z-index: 4;
-  opacity: .06;
+  opacity: 0.5;
   top: 60px;
   left: 25px;
-/*   border-radius: 50%; */
-  overflow: hidden;
 }
-#radio-section:hover{
+.section#radio-section:hover {
   opacity: 1;
 }
-#music {
+.section#radio-section #now-playing {
+  font-size: 0.8rem;
+  text-align: left;
+}
+.section#radio-section #music {
   font-size: 0.005rem;
   color: black;
   background: black;
@@ -101,10 +103,6 @@ body {
   top: 0;
   opacity: inherit;
   left: 0;
-}
-
-.ytp-title-channel-logo{
-  display: none;	
 }
 	
 
@@ -214,10 +212,7 @@ body {
   <div class="section" id="pink-section"></div>
   <div class="section" id="cyan-section"></div>
   <div class="section" id="black-section"></div>
-  <div class="section" id="radio-section">
-    <iframe id="music" class="music" src="https://www.youtube.com/embed/5qap5aO4i9A " allowfullscreen></iframe>
-      
-    </div>
+  <div class="section" id="radio-section"></div>
   <div class="menu-button" id="menu-button">Menu</div>
   <div id="menu" class="menu hidden">
     <section class="songs">
@@ -344,30 +339,27 @@ let thunderstorm = document.getElementById("thunderstorm");
 let controls = document.getElementById("controls");
 
 //Radio Station Click Events
-function selectMusic(URL){
+function selectMusic(URL, playing){
   if (URL === "nomusic"){
-    musicdiv.innerHTML = " ";
-    console.log(musicdiv.innerHTML);} else{
-      let videoSelection = "<iframe id='music' class='music' src='https://www.youtube.com/embed/" + URL + "'  " + " allowfullscreen></iframe>";
+    musicdiv.innerHTML = " ";} else{
+      let videoSelection = "<iframe id='music' class='music' src='https://www.youtube.com/embed/" + URL + "'  " + " allowfullscreen></iframe>" + '<p id="now-playing">Now playing:<br>' + playing + '</p>';
     musicdiv.innerHTML = videoSelection;
-    console.log(videoSelection);
     }
-  let playing = false;
 }
 nomusic.addEventListener("click", function(){
-  selectMusic('nomusic');
+  selectMusic('nomusic',"nomusic");
 });
 chillhop.addEventListener("click", function(){
-  selectMusic('5qap5aO4i9A');
+  selectMusic('5qap5aO4i9A', 'chill hop');
 });
 ambience.addEventListener('click', function(){
-  selectMusic('tNkZsRW7h2c');
+  selectMusic('tNkZsRW7h2c', 'ambience');
 });
 jazzpiano.addEventListener('click', function(){
-  selectMusic('Dx5qFachd3A');
+  selectMusic('Dx5qFachd3A', 'jazz piano');
 });
 thunderstorm.addEventListener('click', function(){
-  selectMusic('VqxYQsVpZdg');
+  selectMusic('VqxYQsVpZdg', 'thunderstorms');
 });
 
 //Clock
