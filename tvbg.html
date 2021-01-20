@@ -84,12 +84,13 @@ body {
   z-index: 4;
   top: 60px;
   left: 25px;
+  background: none;
 }
 .section#radio-section #now-playing {
   font-size: 0.7rem;
   text-align: left;
 }
-.section#radio-section #now-playing small{
+.section#radio-section #now-playing .small-text{
   font-size: .6rem
 }
 .section#radio-section #music {
@@ -339,7 +340,7 @@ let controls = document.getElementById("controls");
 function selectMusic(URL, playing){
   if (URL === "nomusic"){
     musicdiv.innerHTML = " ";} else{
-      let videoSelection = "<iframe id='music' class='music' src='https://www.youtube.com/embed/" + URL + "'  " + " allowfullscreen></iframe>" + '<p id="now-playing"><small>Now playing:</small><br>' + playing + '</p>';
+      let videoSelection = "<iframe id='music' class='music' src='https://www.youtube.com/embed/" + URL + "'  " + " allowfullscreen></iframe>" + '<p id="now-playing"><small class="small-text">Now playing:</small><br>' + playing + '</p>';
     musicdiv.innerHTML = videoSelection;
     }
 }
