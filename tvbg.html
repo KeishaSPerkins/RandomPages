@@ -117,6 +117,7 @@ body {
   padding: 5px;
   border-radius: 5px;
   z-index: 5;
+	cursor: pointer
 }
 
 .menu {
@@ -345,7 +346,8 @@ let controls = document.getElementById("controls");
 //Radio Station Click Events
 function selectMusic(URL){
   if (URL = "nomusic"){
-    music.innerHTML = " ";} else{
+    console.log("boop");
+    musicdiv.innerHTML = " ";} else{
     musicdiv.innerHTML = '<iframe id="music" class="music" src="https://www.youtube.com/embed/' + URL + ' + frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
   let music = document.getElementById("music");}
   let playing = false;
