@@ -97,12 +97,9 @@ body {
   width: 20vh;
   position: relative;
   top: 0;
-  opacity: 0.2;
   left: 0;
 }
-.section#radio-section #music:hover {
-  opacity: 1;
-}
+
 .menu-button {
   position: fixed;
   top: 20px;
@@ -339,7 +336,7 @@ let controls = document.getElementById("controls");
 function selectMusic(URL, playing){
   if (URL === "nomusic"){
     musicdiv.innerHTML = " ";} else{
-      let videoSelection = "<iframe id='music' class='music' src='https://www.youtube.com/embed/" + URL + "'  " + " allowfullscreen></iframe>" + '<p id="now-playing">Now playing:<br>' + playing + '</p>';
+      let videoSelection = "<iframe id='music' class='music' src='https://www.youtube.com/embed/" + URL + "'  " + " allowfullscreen></iframe>" + '<p id="now-playing"><small>Now playing:</small><br>' + playing + '</p>';
     musicdiv.innerHTML = videoSelection;
     }
 }
