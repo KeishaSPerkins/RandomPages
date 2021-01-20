@@ -214,7 +214,7 @@ body {
   <div class="section" id="pink-section"></div>
   <div class="section" id="cyan-section"></div>
   <div class="section" id="black-section"></div>
-  <div class="section" id="radio-section"><span class="music">
+  <div class="section" id="radio-section">
     <iframe id="music" class="music" src="https://www.youtube.com/embed/5qap5aO4i9A " allowfullscreen></iframe>
       
     </div>
@@ -348,9 +348,11 @@ function selectMusic(URL){
   if (URL === "nomusic"){
     console.log("boop");
     musicdiv.innerHTML = " ";} else{
-    console.log("blip");
-    musicdiv.innerHTML = '<iframe id="music" class="music" src="https://www.youtube.com/embed/' + URL + ' allowfullscreen></iframe>';
-  let music = document.getElementById("music");}
+    let music = document.getElementById("music");
+    music.innerHTML = '<iframe id="music" class="music" src="https://www.youtube.com/embed/' + URL + ' allowfullscreen></iframe>';
+  
+      console.log(musicdiv.innerHTML);
+    }
   let playing = false;
 }
 nomusic.addEventListener("click", function(){
