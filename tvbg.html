@@ -348,6 +348,7 @@ function selectMusic(URL){
   if (URL === "nomusic"){
     console.log("boop");
     musicdiv.innerHTML = " ";} else{
+    console.log("blip");
     musicdiv.innerHTML = '<iframe id="music" class="music" src="https://www.youtube.com/embed/' + URL + ' allowfullscreen></iframe>';
   let music = document.getElementById("music");}
   let playing = false;
