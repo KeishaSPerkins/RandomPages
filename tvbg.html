@@ -214,7 +214,7 @@ body {
   <div class="section" id="cyan-section"></div>
   <div class="section" id="black-section"></div>
   <div class="section" id="radio-section"><span class="music">
-    <iframe id="music" class="music" src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1 " frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe id="music" class="music" src="https://www.youtube.com/embed/5qap5aO4i9A " frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       
     </div>
   <div class="menu-button" id="menu-button">Menu</div>
@@ -344,7 +344,7 @@ let controls = document.getElementById("controls");
 
 //Radio Station Click Events
 function selectMusic(URL){
-  musicdiv.innerHTML = '<iframe id="music" class="music" src="https://www.youtube.com/embed/' + URL +'?autoplay=1 " frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+  musicdiv.innerHTML = '<iframe id="music" class="music" src="https://www.youtube.com/embed/' + URL " frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
   let music = document.getElementById("music");
   let playing = false;
 }
