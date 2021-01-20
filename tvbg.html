@@ -346,12 +346,11 @@ let controls = document.getElementById("controls");
 //Radio Station Click Events
 function selectMusic(URL){
   if (URL === "nomusic"){
-    console.log("boop");
-    musicdiv.innerHTML = " ";} else{
-    let music = document.getElementById("music");
-    music.innerHTML = '<iframe id="music" class="music" src="https://www.youtube.com/embed/' + URL + ' allowfullscreen></iframe>';
-  
-      console.log(musicdiv.innerHTML);
+    musicdiv.innerHTML = " ";
+    console.log(musicdiv.innerHTML);} else{
+      let videoSelection = "<iframe id='music' class='music' src='https://www.youtube.com/embed/" + URL + "'  " + " allowfullscreen></iframe>";
+    musicdiv.innerHTML = videoSelection;
+    console.log(videoSelection);
     }
   let playing = false;
 }
