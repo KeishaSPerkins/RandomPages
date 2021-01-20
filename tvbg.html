@@ -345,7 +345,7 @@ let controls = document.getElementById("controls");
 
 //Radio Station Click Events
 function selectMusic(URL){
-  if (URL = "nomusic"){
+  if (URL === "nomusic"){
     console.log("boop");
     musicdiv.innerHTML = " ";} else{
     musicdiv.innerHTML = '<iframe id="music" class="music" src="https://www.youtube.com/embed/' + URL + ' + frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
