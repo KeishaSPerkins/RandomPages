@@ -99,6 +99,7 @@ body {
   width: 20vh;
   position: relative;
   top: 0;
+  opacity: inherit;
   left: 0;
 }
 
@@ -343,7 +344,9 @@ let controls = document.getElementById("controls");
 
 //Radio Station Click Events
 function selectMusic(URL){
-  musicdiv.innerHTML = '<iframe id="music" class="music" src="https://www.youtube.com/embed/' + URL + ' + frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+  if (URL = "nomusic"){
+    music.innerHTML = " ";} else{
+    musicdiv.innerHTML = '<iframe id="music" class="music" src="https://www.youtube.com/embed/' + URL + ' + frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
   let music = document.getElementById("music");
   let playing = false;
 }
